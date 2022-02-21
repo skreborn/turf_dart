@@ -433,8 +433,7 @@ class MultiPoint extends GeometryType<List<Position>> {
       _$MultiPointFromJson(json);
 
   MultiPoint.fromPoints({BBox? bbox, required List<Point> points})
-      : assert(points.length >= 2),
-        super.withType(points.map((e) => e.coordinates).toList(),
+      : super.withType(points.map((e) => e.coordinates).toList(),
             GeoJSONObjectType.multiPoint,
             bbox: bbox);
 
@@ -484,8 +483,7 @@ class MultiLineString extends GeometryType<List<List<Position>>> {
 
   MultiLineString.fromLineStrings(
       {BBox? bbox, required List<LineString> lineStrings})
-      : assert(lineStrings.length >= 2),
-        super.withType(lineStrings.map((e) => e.coordinates).toList(),
+      : super.withType(lineStrings.map((e) => e.coordinates).toList(),
             GeoJSONObjectType.multiLineString,
             bbox: bbox);
 
@@ -538,8 +536,7 @@ class MultiPolygon extends GeometryType<List<List<List<Position>>>> {
       _$MultiPolygonFromJson(json);
 
   MultiPolygon.fromPolygons({BBox? bbox, required List<Polygon> polygons})
-      : assert(polygons.length >= 2),
-        super.withType(polygons.map((e) => e.coordinates).toList(),
+      : super.withType(polygons.map((e) => e.coordinates).toList(),
             GeoJSONObjectType.multiPolygon,
             bbox: bbox);
 
